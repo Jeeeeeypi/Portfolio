@@ -20,7 +20,6 @@ font-family: 'Poppins', sans-serif;
 background-color: var(--primary);
 color: var(--light);
 line-height: 1.6;
-padding: 0 1rem;
 }
 
 /* Links */
@@ -120,6 +119,48 @@ margin-top: 0.5rem;
 margin-bottom: 0.5rem;
 }
 
+
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
 /* BACK BUTTON */
 .back-btn {
 display: inline-block;
@@ -137,6 +178,60 @@ transition: var(--transition);
 background-color: #38bdf8;
 }
 
+.slider2 {
+  position: relative;
+  max-width: 300px;   /* small slider box */
+  height: 10px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.slider2 .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider2 .slides img {
+  width: 100%;        /* ✅ ONE image per view */
+  flex-shrink: 0;
+  height: 180px;      /* small but visible */
+  object-fit: cover;
+}
+
+/* NAV BUTTONS */
+.slider2 .prev,
+.slider2 .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* MOBILE RESPONSIVE SIZE */
+@media (max-width: 768px) {
+  .slider2 {
+    max-width: 100%;     /* full width on mobile */
+    margin: 1rem auto;
+  }
+
+  .slider2 .slides img {
+    height: 220px;       /* 🔥 smaller screenshot height */
+    object-fit: contain; /* keeps full image visible */
+  }
+
+  .slider2 .prev,
+  .slider2 .next {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
 /* RESPONSIVE DESIGN */
 /* Tablets */
 @media (max-width: 992px) {
